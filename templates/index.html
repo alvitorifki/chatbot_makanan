@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chatbot Toko Makan</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <div class="chat-container">
+    <div class="chat-header">
+      🍽️ Chatbot Toko Makan
+      <span>Online</span>
+    </div>
+
+    <div id="chat" class="chat-body">
+      <div class="bot bubble">
+        Halo 👋 Selamat datang di Toko Makan kami.<br>
+        Tanya menu, harga, atau promo ya.
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <input id="input" type="text" placeholder="Tulis pesan..." />
+      <button onclick="send()">➤</button>
+    </div>
+  </div>
+
+<script>
+function send() {
+  let input = document.getElementById("input");
+  let msg = input.value.trim();
+  if (!msg) return;
+
+  let chat = document.getElementById("chat");
+
+  chat.innerHTML += `<div class="user bubble">${msg}</div>`;
+  input.value = "";
+  chat.scrollTop = chat.scrollHeight;
+
+  fetch("/chat", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({message: msg})
+  })
+  .then(res => res.json())
+  .then(data => {
+    chat.innerHTML += `<div class="bot bubble">${data.reply}</div>`;
+    chat.scrollTop = chat.scrollHeight;
+  });
+}
+
+document.getElementById("input").addEventListener("keypress", function(e) {
+  if (e.key === "Enter") send();
+});
+</script>
+
+</body>
+</html>

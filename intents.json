@@ -1,0 +1,129 @@
+{
+  "intents": [
+    {
+      "tag": "salam",
+      "patterns": ["halo", "hai", "pagi", "siang", "malam"],
+      "responses": ["Halo! Ada yang bisa kami bantu?", "Hai, selamat datang di toko kami."]
+    },
+    {
+      "tag": "jam_buka",
+      "patterns": ["jam buka", "buka jam berapa", "toko buka kapan"],
+      "responses": ["Toko buka setiap hari pukul 09.00 - 21.00."]
+    },
+    {
+      "tag": "lokasi",
+      "patterns": ["alamat", "lokasi toko", "tokonya dimana"],
+      "responses": ["Toko kami berada di pusat kota dan mudah dijangkau."]
+    },
+    {
+        "tag": "kontak",
+        "patterns": ["nomor telepon", "kontak", "hubungi"],
+        "responses": ["Anda bisa menghubungi kami di nomor 0821723681378."]
+    },
+    {
+        "tag": "menu",
+        "patterns": ["ada menu apa", "menu makanan", "daftar menu"],
+        "responses": ["Kami memiliki berbagai menu makanan dan minuman yang lezat. Silakan lihat di katalog kami."]
+    },
+    {
+        "tag": "makanan",
+        "patterns": ["makanan apa aja", "jenis makanan", "ada makanan apa"],
+        "responses": ["Kami menyediakan berbagai jenis makanan seperti nasi goreng, mie ayam, ayam geprek ,mie goreng, bebek goreng, ayam panggang ."]
+    },
+    {
+        "tag": "minuman",
+        "patterns": ["minuman ada apa aja", "jenis minuman", "ada minuman apa"],
+        "responses": ["Kami menawarkan berbagai minuman segar seperti es teh, es jeruk, kopi, dan jus buah."]
+    },
+    {
+        "tag": "bungkus",
+        "patterns": ["bisa dibungkus", "take away", "makan di tempat"],
+        "responses": ["Bisa makan di tempat atau dibungkus sesuai kebutuhan."]
+    },
+    {
+        "tag": "halal",
+        "patterns": ["halal ga", "makanannya halal", "ini halal"],
+        "responses": ["Semua menu kami dijamin halal."]
+    },
+    {
+        "tag": "harga",
+        "patterns": ["berapa harga", "harga menu", "biaya"],
+        "responses": ["Harga bervariasi tergantung menu. Silakan cek katalog untuk detail harga."]
+    },
+    {
+        "tag": "metode_order",
+        "patterns": ["cara order", "bagaimana pesan", "order gimana"],
+        "responses": ["Anda bisa memesan langsung di toko atau melalui aplikasi kami."]
+    },
+    {
+        "tag": "rekomendasi",
+        "patterns": ["rekomendasi", "menu favorit", "yang enak apa", "best seller"],
+        "responses": ["Menu favorit pelanggan kami adalah Ayam Geprek dan Nasi Goreng."]
+    },
+    {
+        "tag": "reservasi",
+        "patterns": ["bisa reservasi", "pesan tempat", "booking meja"],
+        "responses": ["Ya, Anda bisa melakukan reservasi dengan menghubungi nomor kami."]
+    },
+    {
+      "tag": "pesan",
+      "patterns": ["cara pesan", "gimana order", "pesan gimana"],
+      "responses": ["Silakan pilih menu lalu konfirmasi ke kasir."]
+    },
+    {
+      "tag": "terima_kasih",
+      "patterns": ["makasih", "terima kasih", "thanks"],
+      "responses": ["Sama-sama, semoga harimu menyenangkan."]
+    },
+    {
+        "tag": "produk",
+        "patterns": ["produk makanan apa aja", "ada produk apa", "jenis produk"],
+        "responses": ["Kami menyediakan berbagai makanan dan minuman yang berkualitas, "]
+    },
+    {
+        "tag": "layanan",
+        "patterns": ["layanan apa aja", "ada layanan apa", "jenis layanan"],
+        "responses": ["Kami menawarkan layanan pemesanan online, pengantaran, dan layanan pelanggan 24/7."]
+    },
+    {
+        "tag": "waktu_pengiriman",
+        "patterns": ["berapa lama pengiriman", "waktu kirim", "lama kirim"],
+        "responses": ["Waktu pengiriman biasanya memakan waktu 30-60 menit tergantung lokasi."]
+    },
+    {
+        "tag": "bahan_baku",
+        "patterns": ["bahan baku apa", "bahan makanan", "bahan minuman"],
+        "responses": ["Kami menggunakan bahan baku segar dan berkualitas tinggi untuk semua produk kami."]
+    },
+    {
+        "tag": "kualitas_produk",
+        "patterns": ["kualitas produk", "produk enak gak", "bagus gak produknya"],
+        "responses": ["Kami selalu menjaga kualitas produk dengan bahan-bahan segar dan proses yang higienis."]
+    },
+    {
+        "tag": "promo",
+        "patterns": ["ada promo apa", "diskon", "promo terbaru"],
+        "responses": ["Saat ini kami sedang mengadakan diskon hingga 20% untuk produk tertentu."]
+    },
+    {
+        "tag": "metode_pembayaran",
+        "patterns": ["metode pembayaran", "cara bayar", "bayarnya gimana"],
+        "responses": ["Kami menerima pembayaran tunai, kartu kredit, dan e-wallet."]
+    },
+    {
+        "tag": "pengiriman",
+        "patterns": ["pengiriman", "cara kirim", "ongkir"],
+        "responses": ["Kami menyediakan layanan pengiriman ke seluruh wilayah dengan biaya yang terjangkau."]
+    },
+    {
+      "tag": "keluhan",
+      "patterns": ["komplain", "ada masalah", "gak puas"],
+      "responses": ["Kami mohon maaf atas ketidaknyamanan ini. Silakan jelaskan masalahnya agar kami bisa membantu."]
+    },
+    {
+      "tag": "fallback",
+      "patterns": ["??", "ga jelas", "asdf"],
+      "responses": ["Maaf, saya belum paham. Bisa diulang dengan kata lain?"]
+    }
+  ]
+}
