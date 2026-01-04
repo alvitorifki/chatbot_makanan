@@ -56,29 +56,22 @@ def index():
 def chat():
     user_msg = request.json["message"].lower()
 
-    # ===== LIST MENU MAKANAN =====
-    if any(k in user_msg for k in ["menu makanan", "makanan apa", "makan apa"]):
-        menu = "\n".join([f"- {m.title()}" for m in menu_makanan])
-        return jsonify({"reply": f"Menu makanan kami:\n{menu}"})
+    if "menu makanan" in user_msg:
+        return jsonify({"reply": list(menu_makanan.keys())})
 
-    # ===== LIST MENU MINUMAN =====
-    if any(k in user_msg for k in ["menu minuman", "minuman apa"]):
-        menu = "\n".join([f"- {m.title()}" for m in menu_minuman])
-        return jsonify({"reply": f"Menu minuman kami:\n{menu}"})
+    if "menu minuman" in user_msg:
+        return jsonify({"reply": list(menu_minuman.keys())})
 
-    # ===== HARGA PER ITEM =====
     for item, harga in {**menu_makanan, **menu_minuman}.items():
         if item in user_msg:
-            return jsonify({"reply": f"{item.title()} harganya {harga//1000}k."})
+            return jsonify({"reply": f"{item.title()} harganya {harga//1000}k"})
 
-    # ===== ML INTENT =====
     clean = clean_text(user_msg)
     vec = vectorizer.transform([clean])
     intent = model.predict(vec)[0]
 
-    reply = random.choice(responses.get(intent, ["Maaf, saya belum paham."]))
+    reply = random.choice(responses.get(intent, ["Gua belum paham."]))
     return jsonify({"reply": reply})
 
 if __name__ == "__main__":
-    print("APP.PY DIEKSEKUSI")
     app.run(debug=True)
